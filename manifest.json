@@ -13,9 +13,9 @@
   ],
   "license": "MIT AND CC-BY-4.0",
   "compatibility": {
-    "minimum": "2.0.0-alpha.0",
-    "verified": "2.0.0-alpha.0",
-    "maximum": "2.x"
+    "minimum": "1.0.0-rc.1",
+    "verified": "1.0.0",
+    "maximum": "1.x"
   },
   "capabilities": [
     "actors.register",
