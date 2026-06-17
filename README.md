@@ -20,27 +20,27 @@ SDK 1
 
 ## What this package includes
 
-- Actor schemas for characters and monsters.
-- Item schemas for weapons, armor, equipment, consumables, spells, feats,
+* Actor schemas for characters and monsters.
+* Item schemas for weapons, armor, equipment, consumables, spells, feats,
   features, races, backgrounds, classes, and effects.
-- Declarative actor and item sheets.
-- Runtime sheet helpers through `sheets.runtime`.
-- Combat panel/runtime integration through `combat.runtime`.
-- Dice, roll intent, chat-card, token, and combat mappings.
-- Small sample/model content packs for development and drag/drop testing.
+* Declarative actor and item sheets.
+* Runtime sheet helpers through `sheets.runtime`.
+* Combat panel/runtime integration through `combat.runtime`.
+* Dice, roll intent, chat-card, token, and combat mappings.
+* Small sample/model content packs for development and drag/drop testing.
 
 ## What this package does not include
 
 This package does **not** include:
 
-- official rulebooks;
-- official PDFs;
-- official artwork;
-- official trade dress;
-- a full proprietary compendium;
-- closed/proprietary monsters, settings, subclasses, spells, or other material
+* official rulebooks;
+* official PDFs;
+* official artwork;
+* official trade dress;
+* a full proprietary compendium;
+* closed/proprietary monsters, settings, subclasses, spells, or other material
   outside material the project is permitted to use;
-- any claim of official affiliation, endorsement, or approval by Wizards of the
+* any claim of official affiliation, endorsement, or approval by Wizards of the
   Coast.
 
 Users are responsible for owning and using any rulebooks or content required for
@@ -56,9 +56,29 @@ Commons Attribution 4.0 International (CC BY 4.0). See [`NOTICE.md`](NOTICE.md).
 
 ## Installation
 
-See [`INSTALL.md`](INSTALL.md).
+The recommended way to install this ruleset is through the Gravewright web
+interface.
 
-Quick install from a Gravewright checkout:
+### Install through Gravewright
+
+1. Download the latest release `.zip` from this repository.
+2. Open Gravewright in your browser.
+3. Go to **Sistemas de Regras** / **Rulesets**.
+4. Click **Enviar e instalar**.
+5. Select the downloaded `.zip` file.
+6. Review the package details.
+7. Click **Instalar**.
+
+After installation, the ruleset will appear in the available rulesets list.
+
+When creating or configuring a campaign, select the **5e SRD Compatible
+Framework** ruleset for that campaign.
+
+### Install manually from a Gravewright checkout
+
+Manual installation is intended for developers, maintainers, and advanced users.
+
+From the Gravewright project root:
 
 ```bash
 mkdir -p data/packages/rulesets
@@ -75,6 +95,21 @@ New-Item -ItemType Directory -Force data\packages\rulesets | Out-Null
 git clone https://github.com/Gravewright/gravewright-5e-srd.git data\packages\rulesets\dnd5e
 uv run python -m app.cli package validate data/packages/rulesets/dnd5e
 uv run python -m app.cli package install dnd5e --enable
+uv run python -m app.cli doctor
+```
+
+### Updating a manual install
+
+From the package directory:
+
+```bash
+git pull
+```
+
+Then from the Gravewright project root:
+
+```bash
+uv run python -m app.cli package update dnd5e --json
 uv run python -m app.cli doctor
 ```
 
