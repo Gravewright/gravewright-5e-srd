@@ -5,7 +5,7 @@
   "kind": "ruleset",
   "id": "dnd5e",
   "name": "5e SRD Compatible Framework",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Unofficial 5e/SRD-compatible ruleset framework for Gravewright. Provides schemas, sheets, rules, mappings, automation, and sample model packs for testing. It does not include official rulebooks, PDFs, artwork, trade dress, or a complete proprietary compendium.",
   "authors": [
     "Ricardo Tristão",
@@ -32,8 +32,7 @@
     "assets.ui",
     "assets.styles",
     "assets.scripts",
-    "combat.config",
-    "combat.runtime"
+    "combat.config"
   ],
   "activation": {
     "scope": "campaign",
@@ -48,19 +47,13 @@
         "assets/dnd5e.css"
       ],
       "scripts": [
-        "assets/dnd5e-sheets.js",
-        "assets/combat-panel.js"
+        "assets/dnd5e-sheets.js"
       ]
     }
   },
   "provides": {
     "storage": {
       "model": "scoped-json-v1"
-    },
-    "defaults": {
-      "actorType": "character",
-      "itemType": "weapon",
-      "locale": "en"
     },
     "actorTypes": [
       {

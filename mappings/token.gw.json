@@ -1,9 +1,14 @@
 {
+  "$comment": "bar_1 é desenhada sob o token, bar_2 acima dele. As cores são as padrão do core (verde/azul) — este sistema não as sobrescreve.",
   "character": {
     "name": "core.name",
     "bars": {
-      "hp": {
+      "bar_1": {
         "value": "sheet.hp.value",
+        "max": "sheet.hp.max"
+      },
+      "bar_2": {
+        "value": "sheet.hp.temp",
         "max": "sheet.hp.max"
       }
     },
@@ -14,7 +19,7 @@
     "name": "core.name",
     "size": "sheet.size",
     "bars": {
-      "hp": {
+      "bar_1": {
         "value": "sheet.hp.value",
         "max": "sheet.hp.max"
       }

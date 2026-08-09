@@ -302,4 +302,11 @@
     ...namespace,
     createSheetsPlugin,
   });
+
+  window.GravewrightSDK.register({
+    id: "dnd5e",
+    setup(sdk) {
+      sdk.sheets.register(createSheetsPlugin(sdk));
+    },
+  });
 })();

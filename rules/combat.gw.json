@@ -1,14 +1,14 @@
 {
-  "version": 1,
-  "defaultMode": "individual_initiative",
-  "turnOrder": {
-    "strategy": "formula_sort",
+  "version": 2,
+  "initiative": {
     "label": "dnd5e.ui.iniciativa.dnd5e",
+    "input": "roll",
     "sort": "desc",
-    "tieBreakers": [
-      "@sheet.abilities.dex.score",
-      "@participant.name"
-    ]
+    "formula": "1d20 + @sheet.combat.initiative",
+    "actionId": "roll.initiative",
+    "tieBreaker": "@sheet.abilities.dex.score",
+    "icon": "ph-dice-five",
+    "accent": "#b88a44"
   },
   "resources": {
     "hp": {
@@ -16,152 +16,6 @@
       "path": "sheet.hp.value",
       "maxPath": "sheet.hp.max",
       "min": 0
-    }
-  },
-  "activityTypes": [
-    {
-      "id": "token.move",
-      "label": "dnd5e.ui.mover.token"
-    },
-    {
-      "id": "sheet.action",
-      "label": "dnd5e.ui.usar.acao.da.ficha"
-    },
-    {
-      "id": "sheet.item.action",
-      "label": "dnd5e.ui.usar.item"
-    }
-  ],
-  "initiative": {
-    "mode": "individual",
-    "label": "dnd5e.ui.iniciativa.dnd5e",
-    "roll": {
-      "actionId": "roll.initiative",
-      "formula": "1d20 + @sheet.combat.initiative"
-    },
-    "sort": {
-      "direction": "desc",
-      "tieBreakers": [
-        "@sheet.abilities.dex.score",
-        "@participant.name"
-      ]
-    },
-    "allowReroll": true,
-    "allowManualEdit": true,
-    "appearance": {
-      "theme": "dnd5e",
-      "die": "d20",
-      "rollAllLabel": "Roll all",
-      "rollMonstersLabel": "Monsters only",
-      "rollSubtitle": "d20 + initiative",
-      "monsterSubtitle": "GM creatures",
-      "accent": "red-gold"
-    },
-    "groups": [
-      {
-        "id": "players",
-        "label": "dnd5e.ui.personagens",
-        "actorTypes": [
-          "character"
-        ]
-      },
-      {
-        "id": "monsters",
-        "label": "dnd5e.ui.monstros",
-        "actorTypes": [
-          "monster",
-          "npc",
-          "creature"
-        ]
-      }
-    ]
-  },
-  "ui": {
-    "combat": {
-      "skin": "dnd5e",
-      "density": "compact",
-      "palette": {
-        "accent": "#b88a44",
-        "accentStrong": "#ffe4a3",
-        "danger": "#9f1d1d",
-        "dangerSoft": "#f0b0a3",
-        "current": "#28d17c",
-        "next": "#d33b2f",
-        "acted": "#a8a29e",
-        "scrollbarThumb": "#c99748",
-        "scrollbarTrack": "#1c1110",
-        "surface": "#2a1713",
-        "surfaceRaised": "#3a211a",
-        "text": "#f8ecd3",
-        "muted": "#c3ad83",
-        "border": "#6f4a25",
-        "gold": "#e2bd6c",
-        "blood": "#6f1010"
-      },
-      "hero": {
-        "style": "d20-banner",
-        "motif": "red-parchment-gold"
-      },
-      "initiative": {
-        "icon": "ph-dice-five",
-        "monsterIcon": "ph-skull",
-        "rollAllLabel": "Roll initiative",
-        "rollMonstersLabel": "Roll monsters",
-        "rollSubtitle": "d20 + modifier",
-        "monsterSubtitle": "creatures and NPCs",
-        "scoreLabel": "Initiative"
-      },
-      "statusLabels": {
-        "current": "Current turn",
-        "next": "Next",
-        "acted": "Already acted",
-        "waiting": "Waiting"
-      },
-      "labels": {
-        "searchPlaceholder": "Search participant",
-        "filterAll": "All",
-        "filterActed": "Acted",
-        "filterCurrent": "Current",
-        "roundPrefix": "Round",
-        "turnLabel": "Turn",
-        "noParticipants": "No participants. Select tokens and use + to add.",
-        "noCombat": "No active combat.",
-        "noMatch": "No participants match the filter.",
-        "outOfCombat": "Out of combat",
-        "startCombat": "Start combat",
-        "endCombat": "End combat",
-        "previousTurn": "Previous turn",
-        "nextTurn": "Next turn",
-        "nextRound": "Next round",
-        "addSelectedTokens": "Add selected tokens",
-        "participantActions": "Participant actions",
-        "centerToken": "Center token",
-        "openSheet": "Open sheet",
-        "rollInitiative": "Roll initiative",
-        "setAsTurn": "Set as turn",
-        "removeParticipant": "Remove",
-        "noActions": "No actions",
-        "metricParticipants": "Participants",
-        "metricInitiatives": "Initiatives",
-        "metricWaiting": "Waiting",
-        "metricActed": "Already acted",
-        "combatInactive": "Out of combat",
-        "noActiveParticipant": "No active participant",
-        "combatNotStarted": "Combat not started",
-        "startHint": "Start combat and add tokens to set the order.",
-        "activeLabel": "Active:",
-        "waitingForGm": "Waiting for GM.",
-        "usePlayToStart": "Use ▶ to start.",
-        "card": "Card",
-        "condition": "condition",
-        "conditions": "conditions",
-        "effect": "effect",
-        "effects": "effects"
-      },
-      "participant": {
-        "frame": "ornate-card",
-        "portrait": "gold-token-frame"
-      }
     }
   }
 }

@@ -14,7 +14,7 @@ Package status: **Alpha / SDK 1 compatible**
 Tested with:
 
 ```text
-Gravewright 2.0.0-alpha.0
+Gravewright 3.0.0-alpha
 SDK 1
 ```
 
@@ -25,7 +25,7 @@ SDK 1
   features, races, backgrounds, classes, and effects.
 * Declarative actor and item sheets.
 * Runtime sheet helpers through `sheets.runtime`.
-* Combat panel/runtime integration through `combat.runtime`.
+* Declarative combat configuration through `combat.config`.
 * Dice, roll intent, chat-card, token, and combat mappings.
 * Small sample/model content packs for development and drag/drop testing.
 
