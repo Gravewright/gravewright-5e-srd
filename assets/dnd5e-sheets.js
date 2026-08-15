@@ -164,11 +164,7 @@
           patch[`skills.${key}.expert`] = !!row.querySelector("[data-skill-expert]")?.checked;
         });
         const meta = h.getContext(root);
-        if (meta && await h.postJSON("/game/actor/sheet-data/patch", {
-          csrf_token: meta.csrf,
-          actor_id: meta.actorId,
-          patch,
-        })) {
+        if (meta && await sdk.actors.patchData(meta.actorId, patch)) {
           h.closeFloatingSheetMenus();
           h.refresh(root);
         }
@@ -184,7 +180,7 @@
     (dialog.querySelector("input:not(:disabled), button") || dialog).focus();
   }
 
-  function renderMonsterSkillsSection(node, rc) {
+  function renderMonsterSkillsSection(node, rc, sdk) {
     const section = h.el("section", "actor-section actor-section--skills actor-section--monster-skills");
     const title = h.el("h3", "actor-section-title actor-section-title--button");
     const open = h.el("button", "actor-monster-skills-open");
@@ -281,7 +277,7 @@
     labels: L,
     renderSection(node, variant, rc) {
       if (rc.actorType === "monster" && variant === "skills") {
-        return renderMonsterSkillsSection(node, rc);
+        return renderMonsterSkillsSection(node, rc, sdk);
       }
       return null;
     },
