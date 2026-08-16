@@ -7,6 +7,9 @@
   "name": "5e SRD Compatible Framework",
   "version": "0.3.1",
   "description": "Unofficial 5e/SRD-compatible ruleset framework for Gravewright. Provides schemas, sheets, rules, mappings, automation, and sample model packs for testing. It does not include official rulebooks, PDFs, artwork, trade dress, or a complete proprietary compendium.",
+  "download": "https://github.com/Gravewright/gravewright-5e-srd/archive/refs/tags/v0.3.1.zip",
+  "sha256": "DF1086F65401235A72C6D63C70054D25B94AB14FA60B29DBFD3917011E19C24F",
+  
   "authors": [
     "Ricardo Tristão",
     "Gravewright contributors"
