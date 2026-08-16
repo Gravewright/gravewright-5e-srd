@@ -3,6 +3,7 @@
 (function () {
   const namespace = window.GravewrightDnd5e || {};
   let h = {};
+  let sdk = null;
 
   const L = {
     // Character header
@@ -164,7 +165,8 @@
           patch[`skills.${key}.expert`] = !!row.querySelector("[data-skill-expert]")?.checked;
         });
         const meta = h.getContext(root);
-        if (meta && await sdk.actors.patchData(meta.actorId, patch)) {
+        if (meta && sdk) {
+          await sdk.actors.patchData(meta.actorId, patch);
           h.closeFloatingSheetMenus();
           h.refresh(root);
         }
@@ -180,7 +182,7 @@
     (dialog.querySelector("input:not(:disabled), button") || dialog).focus();
   }
 
-  function renderMonsterSkillsSection(node, rc, sdk) {
+  function renderMonsterSkillsSection(node, rc) {
     const section = h.el("section", "actor-section actor-section--skills actor-section--monster-skills");
     const title = h.el("h3", "actor-section-title actor-section-title--button");
     const open = h.el("button", "actor-monster-skills-open");
@@ -271,13 +273,14 @@
 
 
 
-  function createSheetsPlugin(sdk) {
-    h = sdk.sheets.helpers();
+  function createSheetsPlugin(api) {
+    sdk = api;
+    h = api.sheets.helpers();
     return {
     labels: L,
     renderSection(node, variant, rc) {
       if (rc.actorType === "monster" && variant === "skills") {
-        return renderMonsterSkillsSection(node, rc, sdk);
+        return renderMonsterSkillsSection(node, rc);
       }
       return null;
     },
