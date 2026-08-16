@@ -5,18 +5,24 @@
   "kind": "ruleset",
   "id": "dnd5e",
   "name": "5e SRD Compatible Framework",
-  "version": "0.4.0",
+  "version": "0.3.1",
   "description": "Unofficial 5e/SRD-compatible ruleset framework for Gravewright. Provides schemas, sheets, rules, mappings, automation, and sample model packs for testing. It does not include official rulebooks, PDFs, artwork, trade dress, or a complete proprietary compendium.",
+  "download": "https://github.com/Gravewright/gravewright-5e-srd/archive/refs/tags/v0.3.1.zip",
+  "sha256": "23dfe759733f0cb438fb7e2633e664aefea14853f2e92debc85ae35d4e316c81",
+
   "authors": [
     "Ricardo Tristão",
     "Gravewright contributors"
   ],
+
   "license": "MIT AND CC-BY-4.0",
+
   "compatibility": {
     "minimum": "1",
     "verified": "1",
     "maximum": "1.x"
   },
+
   "capabilities": [
     "actors.register",
     "items.register",
@@ -32,16 +38,19 @@
     "assets.ui",
     "assets.styles",
     "assets.scripts",
-    "combat.config"
-    ,"actors.data.write"
+    "combat.config",
+    "actors.data.write"
   ],
+
   "activation": {
     "scope": "campaign",
     "mode": "exclusive"
   },
+
   "display": {
     "color": "#7a1f2b"
   },
+
   "entrypoints": {
     "game": {
       "styles": [
@@ -52,10 +61,12 @@
       ]
     }
   },
+
   "provides": {
     "storage": {
       "model": "scoped-json-v1"
     },
+
     "actorTypes": [
       {
         "id": "character",
@@ -70,6 +81,7 @@
         "sheet": "layouts/monster.sheet.gw.json"
       }
     ],
+
     "itemTypes": [
       {
         "id": "weapon",
@@ -138,6 +150,7 @@
         "sheet": "layouts/items/effect.sheet.gw.json"
       }
     ],
+
     "areaMarkers": [
       {
         "id": "dnd5e-spell-sphere",
@@ -213,6 +226,7 @@
         }
       }
     ],
+
     "rules": {
       "formulas": "rules/formulas.gw.json",
       "derived": "rules/derived.gw.json",
@@ -221,11 +235,13 @@
       "conditions": "rules/conditions.gw.json",
       "combat": "rules/combat.gw.json"
     },
+
     "mappings": {
       "tokens": "mappings/token.gw.json",
       "chatCards": "mappings/chat-cards.gw.json",
       "rollToast": "mappings/roll-toast.gw.json"
     },
+
     "contentPacks": [
       {
         "id": "dnd5e-weapons",
@@ -306,6 +322,7 @@
         "path": "content/conditions.gwpack.json"
       }
     ],
+
     "locales": {
       "pt-BR": "locales/pt-BR.json",
       "en": "locales/en.json"
